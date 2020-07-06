@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyWebsite</title>
+    <style>
+      table{
+        color:white;
+        background-color: black;
+        border-radius: 30px;
+        font-weight: bold;
+      }
+      #btn{
+        background-color: #eb1e63;
+        font-weight: bold;
+        width: 100px;
+        height: 30px;
+        color: white;
+        border-radius: 25px;
+        border-color:#eb1e63;
+        cursor: pointer;
+        outline:none;
+      }
+      h1{
+        color: #427bf5;
+        font-family: Times New Roman, Times, serif;
+        font-size: 260%;
+        text-align: center;
+      }
+      h2{
+      color:black;
+      text-align: center;
+      }
+    .input
+    {
+     border: 2px white;
+     border-color: white;
+     width:80%;
+     background-color: white;
+     padding: 7px 10px;
+     outline:none;
+     border-radius: 10px;  
+    }
+    </style>
+ </head>
+ <body style="background-color:#42f5e9">
+  <h1 >Car Price Prediction</h1>
+
+  <form action='/result' method='POST'>
+    <table align='center' cellspacing="20">
+      
+      <tr>
+        <td>Present Price in lakh</td>
+        <td>
+         <input class='input' type='number' name='Present_Price' step="0.01"placeholder='Example 0.5,1.2,34.5' required>
+        </td>
+      </tr>
+      <tr>
+        <td>How many kilometers driven?</td>
+        <td>
+         <input class='input' type='number' name='Kms_Driven' placeholder='Example 2000,34000' required>
+        </td>
+      </tr>
+      <tr>
+        <td>Are you a dealer or individual?</td>
+        <td>
+         <select class='input'  name="di">
+         <option value="dealer">Dealer</option>
+         <option value="individual">Individual</option>
+        </td>
+      </tr>
+      <tr>
+        <td>How many owner previously had the car?</td>
+        <td>
+         <select  class='input' name="hm">
+         <option value="0">0</option>
+         <option value="1">1</option>
+         <option value="3">3</option>
+        </td>
+      </tr>
+      <tr>
+        <td>Year</td>
+        <td>
+         <input class='input'  type='number' name='Year' placeholder='Example 2019' required>
+        </td>
+      </tr>
+      <tr>
+        <td>Fule type</td>
+        <td>
+         <select class='input'  name="fule_type">
+         <option value="petrol">Petrol</option>
+         <option value="diesel">Diesel</option>
+         <option value="cng">CNG</option>
+        </td>
+      </tr>
+      <tr>
+        <td>Transmission type</td>
+        <td>
+         <select class='input'  name="tt">
+         <option value="manual">Manual</option>
+         <option value="automatic">Automatic</option>
+        </td>
+      </tr>
+
+      <tr><td align='center' colspan='2'><input id='btn' type='submit' value= 'Submit' name='Present_Price'></td></tr>
+
+    </table>
+    </form>
+<h2>Predicted Price is {{val}} lakh</h2>
+</body>
+</html>
