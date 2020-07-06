@@ -38,8 +38,8 @@ def result():
         Transmission_Manual=1
       else: Transmission_Manual=0
       pred=model.predict([[Present_Price, Kms_Driven, Owner, no_year, Fuel_Type_Diesel,Fuel_Type_Petrol, Seller_Type_Individual, Transmission_Manual]])
-      output=round(pred[0],2)
-      return render_template('home.html',val=output)
+      output=str(round(pred[0],2))
+      return render_template('home.html',val="Predicted price is "+output+" lakh")
 
 if __name__ == '__main__':
    app.run(debug = True)
